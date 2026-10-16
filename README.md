@@ -4,6 +4,10 @@
 
 **Integrantes:** Antonia Gacharná Echeverri, Christian Fabián Jaimes Toscano y Efren Alexander Granados Latorre
 
+**Dashboard (snapshot público):** https://snapshots.raintank.io/dashboard/snapshot/f9InufNo4CVjaQ0y26XyedXmRRgRcebv
+
+**Informe:** `Informe_Actividad5_Grafana.pdf`
+
 ## Objetivo
 
 Cerrar el pipeline de cafeterías de Teusaquillo construido en las actividades
@@ -36,6 +40,7 @@ Foursquare API → S3 (zona raw) → AWS Lambda (UPSERT) → Amazon RDS PostgreS
 | `rds.yaml` | Conexión de Grafana a RDS (sin credenciales; se leen de variables de entorno) |
 | `provider.yaml` | Carga automática del dashboard en Grafana |
 | `instalar.sh` | Instalación completa en la EC2 en un solo comando |
+| `Informe_Actividad5_Grafana.pdf` | Reporte técnico de la entrega (4 páginas) |
 | `cafeterias_teusaquillo_limpio.csv` | 46 cafeterías validadas contra el polígono de Teusaquillo (de la Actividad 2) |
 
 ## Paneles
@@ -55,8 +60,8 @@ En la EC2 (Amazon Linux 2023), con la base RDS ya creada:
 
 ```bash
 sudo dnf install -y git
-git clone https://github.com/<usuario>/grafana-cafeterias-teusaquillo.git
-cd grafana-cafeterias-teusaquillo
+git clone https://github.com/christian130994-coder/grafana-cafeterias-teusaquillo_.git
+cd grafana-cafeterias-teusaquillo_
 sudo bash instalar.sh
 ```
 
@@ -66,7 +71,7 @@ sudo bash instalar.sh
 - Las claves se piden por teclado; el archivo de entorno queda en la EC2 con permisos `600` y está excluido del repositorio.
 - RDS no es pública: solo acepta el puerto 5432 desde el grupo de seguridad de la EC2, con SSL obligatorio.
 - El puerto 22 se abre solo durante la instalación; el evaluador entra como visor anónimo de solo lectura.
-- Al finalizar se termina la EC2 y se elimina o detiene la base RDS.
+- Al finalizar se terminó la EC2 y se eliminó la base RDS (evidencias en el informe).
 
 ## Antecedentes
 
