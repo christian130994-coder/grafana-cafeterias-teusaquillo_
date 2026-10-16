@@ -1,0 +1,22 @@
+# Conexión de Grafana a Amazon RDS PostgreSQL.
+# Los valores ${...} se toman de variables de entorno del contenedor
+# (archivo /opt/grafana/grafana.env, creado por instalar.sh).
+# Ninguna credencial queda escrita en el repositorio.
+apiVersion: 1
+datasources:
+  - name: RDS Cafeterías
+    uid: rds-cafeterias
+    type: grafana-postgresql-datasource
+    access: proxy
+    url: ${RDS_ENDPOINT}:5432
+    user: grafana_reader
+    isDefault: true
+    editable: false
+    jsonData:
+      database: ${RDS_DB}
+      sslmode: require
+      postgresVersion: 1500
+      timescaledb: false
+      maxOpenConns: 5
+    secureJsonData:
+      password: ${GRAFANA_DB_PASSWORD}
