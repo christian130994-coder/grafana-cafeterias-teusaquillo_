@@ -1,5 +1,0 @@
-# Credenciales y secretos: nunca se suben al repositorio
-.env
-*.env
-*.pem
-grafana.env
