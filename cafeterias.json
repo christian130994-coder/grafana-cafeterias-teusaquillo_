@@ -112,7 +112,11 @@
             "properties": [
               {
                 "id": "unit",
-                "value": "lengthm"
+                "value": "suffix: m"
+              },
+              {
+                "id": "decimals",
+                "value": 0
               }
             ]
           }
@@ -161,8 +165,8 @@
           "showScale": true
         },
         "basemap": {
-          "type": "default",
-          "name": "Mapa base",
+          "type": "osm-standard",
+          "name": "OpenStreetMap",
           "config": {}
         },
         "tooltip": {
@@ -179,7 +183,7 @@
               "longitude": "longitude"
             },
             "config": {
-              "showLegend": true,
+              "showLegend": false,
               "style": {
                 "size": {
                   "fixed": 8
@@ -285,8 +289,8 @@
           "showScale": true
         },
         "basemap": {
-          "type": "default",
-          "name": "Mapa base",
+          "type": "osm-standard",
+          "name": "OpenStreetMap",
           "config": {}
         },
         "tooltip": {
